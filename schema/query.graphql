@@ -1,0 +1,7 @@
+type Query {
+    organizations: [OrganizationOutput]
+    organization(name: String!): OrganizationOutput
+
+    workers: [WorkerOutput]
+    worker(name: String!): WorkerOutput
+}
