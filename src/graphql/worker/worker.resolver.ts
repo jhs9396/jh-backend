@@ -1,6 +1,6 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { WorkerService } from './worker.service';
-import { WorkerInput, WorkerOutput } from '../graphql.schema.generated';
+import { WorkerInput, WorkerOutput } from '../../graphql.schema.generated';
 
 @Resolver()
 export class WorkerResolver {

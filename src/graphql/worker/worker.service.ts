@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { WorkerInput, WorkerOutput } from '../graphql.schema.generated';
-import { payload } from '../dummy/dummy';
+import { WorkerInput, WorkerOutput } from '../../graphql.schema.generated';
+import { payload } from '../../helper/dummy/dummy';
 
 @Injectable()
 export class WorkerService {

@@ -1,6 +1,6 @@
 import { Args, Mutation, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { OrganizationService } from './organization.service';
-import { OrganizationInput, OrganizationOutput, WorkerOutput } from '../graphql.schema.generated';
+import { OrganizationInput, OrganizationOutput, WorkerOutput } from 'src/graphql.schema.generated';
 import { WorkerService } from '../worker/worker.service';
 
 @Resolver((of) => OrganizationOutput)

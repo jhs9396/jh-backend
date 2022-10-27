@@ -1,61 +1,82 @@
 
 /*
- * -------------------------------------------------------
+ * ------------------------------------------------------
  * THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
  * -------------------------------------------------------
  */
 
 /* tslint:disable */
 /* eslint-disable */
+export class GraphInput {
+    name?: string;
+}
+
 export class OrganizationInput {
-    name?: Nullable<string>;
-    location?: Nullable<string>;
-    phoneNo?: Nullable<number>;
+    name?: string;
+    location?: string;
+    phoneNo?: number;
 }
 
 export class WorkerInput {
-    name?: Nullable<string>;
-    organization?: Nullable<string>;
-    age?: Nullable<number>;
-    gender?: Nullable<string>;
+    name?: string;
+    organization?: string;
+    age?: number;
+    gender?: string;
+}
+
+export class Node {
+    label?: string;
+    name?: string;
+    radius?: number;
+    color?: string;
+}
+
+export class Edge {
+    source?: string;
+    target?: string;
+}
+
+export class GraphOutput {
+    nodes?: Node[];
+    edges?: Edge[];
 }
 
 export abstract class IMutation {
-    abstract createOrganization(organizationInput: OrganizationInput): Nullable<OrganizationOutput> | Promise<Nullable<OrganizationOutput>>;
+    abstract createOrganization(organizationInput: OrganizationInput): OrganizationOutput | Promise<OrganizationOutput>;
 
-    abstract updateOrganization(name: string, organizationInput: OrganizationInput): Nullable<OrganizationOutput> | Promise<Nullable<OrganizationOutput>>;
+    abstract updateOrganization(name: string, organizationInput: OrganizationInput): OrganizationOutput | Promise<OrganizationOutput>;
 
-    abstract deleteOrganization(name: string): Nullable<OrganizationOutput> | Promise<Nullable<OrganizationOutput>>;
+    abstract deleteOrganization(name: string): OrganizationOutput | Promise<OrganizationOutput>;
 
-    abstract createWorker(workerInput: WorkerInput): Nullable<WorkerOutput> | Promise<Nullable<WorkerOutput>>;
+    abstract createWorker(workerInput: WorkerInput): WorkerOutput | Promise<WorkerOutput>;
 
-    abstract updateWorker(name: string, workerInput: WorkerInput): Nullable<WorkerOutput> | Promise<Nullable<WorkerOutput>>;
+    abstract updateWorker(name: string, workerInput: WorkerInput): WorkerOutput | Promise<WorkerOutput>;
 
-    abstract deleteWorker(name: string): Nullable<WorkerOutput> | Promise<Nullable<WorkerOutput>>;
+    abstract deleteWorker(name: string): WorkerOutput | Promise<WorkerOutput>;
 }
 
 export class OrganizationOutput {
-    name?: Nullable<string>;
-    location?: Nullable<string>;
-    phoneNo?: Nullable<number>;
-    workers?: Nullable<Nullable<WorkerOutput>[]>;
+    name?: string;
+    location?: string;
+    phoneNo?: number;
+    workers?: WorkerOutput[];
 }
 
 export abstract class IQuery {
-    abstract organizations(): Nullable<Nullable<OrganizationOutput>[]> | Promise<Nullable<Nullable<OrganizationOutput>[]>>;
+    abstract organizations(): OrganizationOutput[] | Promise<OrganizationOutput[]>;
 
-    abstract organization(name: string): Nullable<OrganizationOutput> | Promise<Nullable<OrganizationOutput>>;
+    abstract organization(name: string): OrganizationOutput | Promise<OrganizationOutput>;
 
-    abstract workers(): Nullable<Nullable<WorkerOutput>[]> | Promise<Nullable<Nullable<WorkerOutput>[]>>;
+    abstract workers(): WorkerOutput[] | Promise<WorkerOutput[]>;
 
-    abstract worker(name: string): Nullable<WorkerOutput> | Promise<Nullable<WorkerOutput>>;
+    abstract worker(name: string): WorkerOutput | Promise<WorkerOutput>;
+
+    abstract graph(): GraphOutput | Promise<GraphOutput>;
 }
 
 export class WorkerOutput {
-    name?: Nullable<string>;
-    organization?: Nullable<string>;
-    age?: Nullable<number>;
-    gender?: Nullable<string>;
+    name?: string;
+    organization?: string;
+    age?: number;
+    gender?: string;
 }
-
-type Nullable<T> = T | null;

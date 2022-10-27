@@ -24,7 +24,6 @@ export class GraphqlOptions implements GqlOptionsFactory {
       plugins: [],
       debug: true,
       introspection: true,
-      playground: true,
       cors: {
         origin: true,
         credentials: true,

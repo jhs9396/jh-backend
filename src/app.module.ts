@@ -3,8 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { GraphqlOptions } from '../graphql.options';
-import { OrganizationModule } from './organization/organization.module';
-import { WorkerModule } from './worker/worker.module';
+import { OrganizationModule } from './graphql/organization/organization.module';
+import { WorkerModule } from './graphql/worker/worker.module';
+import { GraphModule } from './graphql/graph/graph.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { WorkerModule } from './worker/worker.module';
     }),
     OrganizationModule,
     WorkerModule,
+    GraphModule,
   ],
   controllers: [AppController],
   providers: [AppService],

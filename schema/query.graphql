@@ -4,4 +4,6 @@ type Query {
 
     workers: [WorkerOutput]
     worker(name: String!): WorkerOutput
+
+    graph: GraphOutput
 }
